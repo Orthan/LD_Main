@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6392680042274246705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25, y: 0, z: 0}
+  m_LocalPosition: {x: 400, y: 11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -89,7 +89,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7533470355751009191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 25, y: 0, z: 0}
+  m_LocalPosition: {x: 401, y: 52, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,8 +106,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8229012118895143653}
   - component: {fileID: 8229012118895143654}
-  - component: {fileID: 8229012118895143655}
   - component: {fileID: 8229012118895143648}
+  - component: {fileID: 9120210787955245583}
   m_Layer: 6
   m_Name: Platform
   m_TagString: M_Platform
@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8229012118895143649}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 400, y: 11, z: 0}
   m_LocalScale: {x: 17.258429, y: 3.5311365, z: 3.5311365}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -182,21 +182,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8229012118895143655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8229012118895143649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec6829e0504ecba43be5401d395db5ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  position_1: {fileID: 2230032595339205876}
-  position_2: {fileID: 7770619717930545924}
-  speed: 0.2
 --- !u!61 &8229012118895143648
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -223,3 +208,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9120210787955245583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8229012118895143649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086b64a9d210f724db38709b270eb562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position_1: {fileID: 2230032595339205876}
+  position_2: {fileID: 7770619717930545924}
+  speed: 5
+  isMoving: 0
+  reverse: 0
