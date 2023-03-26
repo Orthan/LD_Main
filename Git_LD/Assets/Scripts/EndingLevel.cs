@@ -8,23 +8,66 @@ public class EndingLevel : MonoBehaviour
     [SerializeField]
     public string levelname;
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private EndingTrigger whiteTrigger;
+
+    [SerializeField]
+    private EndingTrigger blackTrigger;
+
+    float playersReady = 0;
+
+    int playersInTrigger = 0;
+
+    private void Start()
     {
-        
+        whiteTrigger.OnEntered.AddListener(WhiteEntered);
+        whiteTrigger.OnExited.AddListener(WhiteExited);
+        blackTrigger.OnEntered.AddListener(BlackEntered);
+        blackTrigger.OnExited.AddListener(BlackExited);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void WhiteEntered(ColoredCharacter character)
     {
-        
+        if(character.color == ElementColor.Color1)
+        {
+            playersReady++;
+            CheckEnd();
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D pCollision)
+    private void WhiteExited(ColoredCharacter character)
     {
-        //if (pCollision.gameObject.CompareTag("Player"))
-        //{
+        if (character.color == ElementColor.Color1)
+        {
+            playersReady--;
+            CheckEnd();
+        }
+    }
+
+    private void BlackEntered(ColoredCharacter character)
+    {
+        if (character.color == ElementColor.Color2)
+        {
+            playersReady++;
+            CheckEnd();
+        }
+    }
+
+    private void BlackExited(ColoredCharacter character)
+    {
+        if (character.color == ElementColor.Color2)
+        {
+            playersReady--;
+            CheckEnd();
+        }
+    }
+
+    private void CheckEnd()
+    {
+        if(playersReady >= 2)
+        {
             SceneManager.LoadScene(levelname);
-        //}
+        }
     }
 }
